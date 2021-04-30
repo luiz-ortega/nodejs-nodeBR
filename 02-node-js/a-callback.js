@@ -53,13 +53,13 @@ obterUsuario(function resolverUsuario(error, usuario) {
       }
 
       console.log(`
-      None: ${usuario.name},
-      Endereco: ${endereco.rua},${endereco.numero},
-      Telefone: (${telefone.ddd})${telefone.telefone}
+        None: ${usuario.name},
+        Endereco: ${endereco.rua},${endereco.numero},
+        Telefone: (${telefone.ddd})${telefone.telefone}
       `);
     });
   });
 });
-// const telefone = obterTelefone(usuario.id);
+/* const telefone = obterTelefone(usuario.id);
 
-// console.log("telefone", telefone);
+console.log("telefone", telefone); */
