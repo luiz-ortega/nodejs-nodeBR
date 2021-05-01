@@ -1,7 +1,7 @@
 const { obterPessoas } = require("./services");
 
 Array.prototype.meuReduce = function (callback, valorInicial) {
-  const valorFinal = typeof valorInicial !== undefined ? valorInicial : this[0];
+  let valorFinal = typeof valorInicial !== undefined ? valorInicial : this[0];
   for (let index = 0; index <= this.length - 1; index++) {
     valorFinal = callback(valorFinal, this[index], this);
   }
@@ -23,7 +23,7 @@ async function main() {
       ["NodeBR", "Nerdzão"],
     ];
     const total = minhaLista
-      .reduce((anterior, proximo) => {
+      .meuReduce((anterior, proximo) => {
         return anterior.concat(proximo);
       }, [])
       .join(", ");
