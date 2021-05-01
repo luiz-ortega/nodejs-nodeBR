@@ -12,6 +12,7 @@ describe("Suite de manupulação de heróis", function () {
   before(async () => {
     await database.cadastrar(DEFAULT_ITEM_CADASTRAR);
   });
+
   it("deve pesquisar um heróis usando arquivos", async () => {
     const expected = DEFAULT_ITEM_CADASTRAR;
     const [resultado] = await database.listar(expected.id);
@@ -24,5 +25,11 @@ describe("Suite de manupulação de heróis", function () {
     const [actual] = await database.listar(DEFAULT_ITEM_CADASTRAR.id);
 
     deepEqual(actual, expected);
+  });
+
+  it("deve remover um heroi por id", async () => {
+    const expected = true;
+    const resultado = await database.remover(DEFAULT_ITEM_CADASTRAR.id);
+    deepEqual(resultado, expected);
   });
 });
