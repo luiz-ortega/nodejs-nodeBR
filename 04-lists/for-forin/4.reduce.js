@@ -28,6 +28,10 @@ async function main() {
       }, [])
       .join(", ");
 
+    // const customTotal = minhaLista.reduce(
+    //   (acc, current) => `${acc},${current}`
+    // );
+    // console.log(customTotal);
     console.log(total);
   } catch (error) {
     console.log("error", error);
