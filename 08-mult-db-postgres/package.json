@@ -1,0 +1,12 @@
+{
+  "name": "07-mult-db",
+  "version": "1.0.0",
+  "description": "docker run \\  --name postgres \\  -e POSTGRES_USER=username \\  -e POSTGRES_PASSWORD=secretpassword \\  -e POSTGRES_DB=HEROES \\  -p 5432:5432 \\  -d \\  postgres",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Luiz Ortega <luizngust@gmail.com>",
+  "license": "ISC"
+}
