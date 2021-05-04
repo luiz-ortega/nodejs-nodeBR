@@ -59,6 +59,11 @@ class Postgres extends ICrud {
     return await this._herois.update(item, { where: { id: id } });
   }
 
+  async delete(id) {
+    const query = id ? { id } : {};
+    return this._herois.destroy({ where: query });
+  }
+
   async connect() {
     this._driver = new Sequelize("HEROES", "username", "secretpassword", {
       host: "localhost",
