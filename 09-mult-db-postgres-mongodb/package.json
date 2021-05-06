@@ -11,6 +11,7 @@
   "author": "Luiz Ortega <luizngust@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "mongoose": "^5.12.7",
     "pg": "^8.6.0",
     "pg-hstore": "^2.3.3",
     "sequelize": "^6.6.2"

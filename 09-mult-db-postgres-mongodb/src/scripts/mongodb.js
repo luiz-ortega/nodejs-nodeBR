@@ -1,15 +1,15 @@
 /* docker ps 
-docker exec -it 91d963512170 /
+docker exec -it c0673f83e338 /
     mongo -u user -p secretpassword --authenticationDatabase herois */
 
 show dbs
-use heroes
+use herois
 show collections
 
 db.herois.find()
 db.herois.find().pretty()
 
-for (let i=0; i<100000; i++) {
+for (let i=0; i<1000; i++) {
     db.herois.insert({
         nome: `Clone-${i}`,
         poder: 'Velocidade',
