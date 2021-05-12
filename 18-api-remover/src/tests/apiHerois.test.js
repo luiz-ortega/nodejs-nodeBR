@@ -168,7 +168,7 @@ describe("Suite de testes da api Heroes", function () {
     assert.deepEqual(dados, dadosExpected);
   });
 
-  it("retornar erro ao remover DELETE - /herois/:id com id inválido", async () => {
+  it("retornar erro ao remover DELETE - /herois/:id com id inexistente", async () => {
     const _id = "60933128ffc97b09db878a72";
 
     const result = await app.inject({
@@ -186,6 +186,27 @@ describe("Suite de testes da api Heroes", function () {
     };
 
     assert.ok(statusCode === 412);
+    assert.deepEqual(dados, dadosExpected);
+  });
+
+  it("retornar erro ao remover DELETE - /herois/:id com id inválido", async () => {
+    const _id = "INVALIDID";
+
+    const result = await app.inject({
+      method: "DELETE",
+      url: `/herois/${_id}`,
+    });
+
+    const statusCode = result.statusCode;
+    const dados = JSON.parse(result.payload);
+
+    const dadosExpected = {
+      error: "Internal Server Error",
+      message: "An internal server error occurred",
+      statusCode: 500,
+    };
+
+    assert.ok(statusCode === 500);
     assert.deepEqual(dados, dadosExpected);
   });
 });
